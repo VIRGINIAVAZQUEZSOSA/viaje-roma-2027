@@ -6,302 +6,1487 @@
 <title>Roma ❤️ 3–6 febrero 2027</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f8f4ee;
-  color: #292929;
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#faf7f2;
+  color:#29231f;
+  line-height:1.6;
 }
 
-header {
-  background: linear-gradient(135deg, #6d1f2b, #b85c5c);
-  color: white;
-  text-align: center;
-  padding: 70px 20px;
+a{text-decoration:none;color:inherit}
+
+.hero{
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+  color:white;
+  background:
+    linear-gradient(rgba(50,25,15,.58),rgba(50,25,15,.70)),
+    url("https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
 }
 
-header h1 {
-  font-size: 55px;
-  margin: 10px;
+.hero-content{
+  max-width:850px;
 }
 
-header p {
-  font-size: 20px;
+.hero .small{
+  letter-spacing:4px;
+  font-size:14px;
+  margin-bottom:15px;
+  text-transform:uppercase;
 }
 
-nav {
-  background: white;
-  padding: 15px;
-  text-align: center;
-  position: sticky;
-  top: 0;
+.hero h1{
+  font-family:Georgia,serif;
+  font-size:clamp(55px,10vw,105px);
+  margin:0;
+  letter-spacing:3px;
 }
 
-nav a {
-  color: #6d1f2b;
-  text-decoration: none;
-  margin: 8px;
-  font-weight: bold;
+.hero h2{
+  font-family:Georgia,serif;
+  font-size:clamp(22px,4vw,38px);
+  margin:10px 0 25px;
 }
 
-main {
-  max-width: 850px;
-  margin: auto;
-  padding: 25px;
+.hero p{
+  font-size:19px;
+  max-width:650px;
+  margin:auto;
 }
 
-h2 {
-  color: #6d1f2b;
-  font-size: 30px;
+.nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:#2d211b;
+  color:white;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:5px;
+  padding:10px;
+  box-shadow:0 3px 15px rgba(0,0,0,.15);
 }
 
-.card {
-  background: white;
-  border-radius: 18px;
-  padding: 22px;
-  margin: 18px 0;
-  box-shadow: 0 4px 15px rgba(0,0,0,.08);
+.nav a{
+  padding:9px 13px;
+  border-radius:20px;
+  font-size:14px;
 }
 
-.card h3 {
-  color: #8b3038;
+.nav a:hover{background:#8f624d}
+
+.container{
+  width:min(1100px,92%);
+  margin:auto;
 }
 
-.time {
-  color: #a0444c;
-  font-weight: bold;
+section{
+  padding:65px 0;
 }
 
-.button {
-  display: inline-block;
-  background: #8b3038;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 10px;
-  text-decoration: none;
-  margin-top: 8px;
+.section-title{
+  text-align:center;
+  font-family:Georgia,serif;
+  font-size:38px;
+  margin-bottom:12px;
+  color:#533b2d;
 }
 
-footer {
-  text-align: center;
-  padding: 40px;
-  color: #777;
+.section-subtitle{
+  text-align:center;
+  color:#76675f;
+  margin-bottom:40px;
+}
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:18px;
+}
+
+.info-card{
+  background:white;
+  padding:25px;
+  border-radius:22px;
+  box-shadow:0 7px 25px rgba(62,40,25,.08);
+}
+
+.info-card .icon{
+  font-size:35px;
+  margin-bottom:10px;
+}
+
+.info-card h3{
+  font-family:Georgia,serif;
+  color:#684735;
+  margin-bottom:8px;
+}
+
+.highlight{
+  background:#eee2d5;
+  border-radius:25px;
+  padding:30px;
+  margin-top:25px;
+}
+
+.hotel-card{
+  background:linear-gradient(135deg,#53382a,#8b624b);
+  color:white;
+  border-radius:28px;
+  padding:35px;
+  margin-top:35px;
+}
+
+.hotel-card h3{
+  font-family:Georgia,serif;
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.button{
+  display:inline-block;
+  background:#7c513c;
+  color:white;
+  padding:11px 17px;
+  border-radius:25px;
+  margin:6px 4px 0 0;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.button:hover{background:#53382a}
+
+.button.light{
+  background:white;
+  color:#654433;
+}
+
+.day{
+  background:white;
+  border-radius:30px;
+  padding:38px;
+  margin-bottom:45px;
+  box-shadow:0 10px 35px rgba(55,35,20,.08);
+}
+
+.day-header{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.day-number{
+  min-width:65px;
+  height:65px;
+  border-radius:50%;
+  background:#7d513c;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  font-weight:bold;
+}
+
+.day-header h3{
+  font-family:Georgia,serif;
+  font-size:30px;
+  color:#553b2e;
+}
+
+.timeline{
+  border-left:3px solid #dbc7b7;
+  padding-left:25px;
+}
+
+.stop{
+  position:relative;
+  margin-bottom:30px;
+}
+
+.stop:before{
+  content:"";
+  position:absolute;
+  width:13px;
+  height:13px;
+  background:#7d513c;
+  border-radius:50%;
+  left:-33px;
+  top:7px;
+}
+
+.time{
+  font-weight:bold;
+  color:#8a5b43;
+  font-size:14px;
+  letter-spacing:.5px;
+}
+
+.stop h4{
+  font-family:Georgia,serif;
+  font-size:22px;
+  margin:3px 0;
+  color:#4e372b;
+}
+
+.transport{
+  background:#f4eee8;
+  padding:14px 17px;
+  border-radius:15px;
+  margin-top:9px;
+  font-size:14px;
+}
+
+.route{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:8px;
+}
+
+.badge{
+  background:#e6d5c7;
+  color:#624332;
+  padding:5px 10px;
+  border-radius:15px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.route-card{
+  background:#fffaf6;
+  border:1px solid #eadbd0;
+  padding:17px;
+  border-radius:18px;
+  margin-top:12px;
+}
+
+.route-card strong{
+  color:#684735;
+}
+
+.map-button{
+  display:inline-block;
+  margin-top:9px;
+  background:#4e7a59;
+  color:white;
+  padding:8px 13px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.warning{
+  background:#fff3d8;
+  border-left:5px solid #d49b3c;
+  padding:18px;
+  border-radius:12px;
+  margin:20px 0;
+}
+
+.reservations{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.reserve-card{
+  background:white;
+  padding:27px;
+  border-radius:22px;
+  box-shadow:0 7px 25px rgba(62,40,25,.08);
+}
+
+.reserve-card h3{
+  font-family:Georgia,serif;
+  color:#593d2d;
+  margin-bottom:10px;
+}
+
+.budget{
+  background:#53382a;
+  color:white;
+  border-radius:28px;
+  padding:35px;
+}
+
+.budget-row{
+  display:flex;
+  justify-content:space-between;
+  padding:13px 0;
+  border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.checklist{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:12px;
+}
+
+.check{
+  background:white;
+  padding:15px;
+  border-radius:15px;
+  box-shadow:0 4px 15px rgba(0,0,0,.05);
+}
+
+.check input{
+  margin-right:10px;
+  transform:scale(1.2);
+}
+
+.romantic{
+  background:
+    linear-gradient(rgba(65,34,25,.70),rgba(65,34,25,.75)),
+    url("https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+  color:white;
+  text-align:center;
+  padding:90px 25px;
+  border-radius:30px;
+}
+
+.romantic h2{
+  font-family:Georgia,serif;
+  font-size:45px;
+  margin-bottom:20px;
+}
+
+.footer{
+  text-align:center;
+  background:#2d211b;
+  color:#ddd;
+  padding:35px 20px;
+}
+
+@media(max-width:650px){
+  .day{padding:24px}
+  .day-header h3{font-size:24px}
+  .timeline{padding-left:19px}
+  .hero{min-height:570px}
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div>🇮🇹 ESCAPADA EN PAREJA ❤️</div>
-  <h1>ROMA</h1>
-  <p>3 — 6 febrero 2027</p>
-  <p>Una pequeña aventura para recordar</p>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <div class="small">🇮🇹 ESCAPADA EN PAREJA ❤️</div>
+    <h1>ROMA</h1>
+    <h2>3 — 6 febrero 2027</h2>
+    <p>
+      Cuatro días para perdernos por Roma, comer pasta,
+      lanzar una moneda a Trevi y disfrutar de nosotros. ❤️
+    </p>
+  </div>
 </header>
 
-<nav>
-  <a href="#miercoles">Día 1</a>
-  <a href="#jueves">Día 2</a>
-  <a href="#viernes">Día 3</a>
-  <a href="#sabado">Día 4</a>
-  <a href="#reservas">Reservas</a>
-  <a href="#presupuesto">Presupuesto</a>
+<!-- NAV -->
+<nav class="nav">
+  <a href="#viaje">✈️ Viaje</a>
+  <a href="#dia1">Día 1</a>
+  <a href="#dia2">Día 2</a>
+  <a href="#dia3">Día 3</a>
+  <a href="#dia4">Día 4</a>
+  <a href="#transporte">🚇 Transporte</a>
+  <a href="#reservas">🎟️ Reservas</a>
+  <a href="#checklist">☑️ Checklist</a>
 </nav>
 
-<main>
+<!-- VIAJE -->
+<section id="viaje">
+<div class="container">
 
-<section id="miercoles">
-<h2>❤️ Miércoles 3 · Llegada</h2>
+<h2 class="section-title">Nuestro viaje ❤️</h2>
+<p class="section-subtitle">
+  Todo preparado para nuestra escapada a Roma
+</p>
 
-<div class="card">
-<h3>✈️ Llegada a Roma</h3>
-<p><span class="time">12:00</span> Llegada a Fiumicino.</p>
-<p>Recoger maletas y trasladarnos al alojamiento.</p>
+<div class="intro-grid">
+
+<div class="info-card">
+<div class="icon">✈️</div>
+<h3>Barcelona → Roma</h3>
+<p><strong>Miércoles 3 febrero</strong></p>
+<p>Salida: <strong>10:05</strong></p>
+<p>Llegada: <strong>11:05</strong></p>
+<p>Vueling</p>
 </div>
 
-<div class="card">
-<h3>🍝 Comida</h3>
-<p>Dejar las maletas y comer algo rápido para empezar a descubrir Roma.</p>
+<div class="info-card">
+<div class="icon">✈️</div>
+<h3>Roma → Barcelona</h3>
+<p><strong>Sábado 6 febrero</strong></p>
+<p>Salida: <strong>23:15</strong></p>
+<p>Llegada: <strong>01:05</strong></p>
+<p>Vueling</p>
+<p>❤️ Llegamos a Barcelona el domingo 7.</p>
 </div>
 
-<div class="card">
-<h3>🏛️ Primera ruta</h3>
-<p>Piazza Venezia → Via del Corso → Fontana di Trevi → Panteón → Piazza Navona.</p>
+<div class="info-card">
+<div class="icon">🏨</div>
+<h3>Nuestro hotel</h3>
+<p><strong>Bob W Rome Testaccio</strong></p>
+<p>Via Beniamino Franklin, 4</p>
+<p>🍳 Desayuno incluido</p>
 </div>
 
-<div class="card">
-<h3>🌙 Noche</h3>
-<p>Cena tranquila y paseo por el centro histórico.</p>
 </div>
-</section>
 
+<div class="hotel-card">
+<h3>🏨 Bob W Rome Testaccio</h3>
+<p>
+Nuestro punto de partida para descubrir Roma.
+Estamos en Testaccio, un barrio auténtico y con muy buena conexión.
+</p>
 
-<section id="jueves">
-<h2>🏛️ Jueves 4 · Coliseo + Trastevere</h2>
+<p style="margin-top:12px">
+📍 Via Beniamino Franklin, 4, 00153 Roma
+</p>
 
-<div class="card">
-<h3>🏟️ 09:00 · Coliseo</h3>
-<p>Visita al Coliseo, Foro Romano y Palatino.</p>
-<p>⏱️ Aproximadamente 3 horas.</p>
-<a class="button" href="https://ticketing.colosseo.it/" target="_blank">
-Entradas oficiales
+<a class="button light"
+href="https://www.google.com/maps/dir/?api=1&destination=Via+Beniamino+Franklin+4+Roma"
+target="_blank">
+📍 Abrir hotel en Google Maps
+</a>
+
+<a class="button light"
+href="https://bobw.co/locations/rome/bob-w-rome-testaccio"
+target="_blank">
+🏨 Web del hotel
 </a>
 </div>
 
-<div class="card">
-<h3>🍕 13:00 · Comer</h3>
-<p>Comida por la zona de Monti.</p>
-</div>
-
-<div class="card">
-<h3>⛪ 14:30 · San Pietro in Vincoli</h3>
-<p>Ver el famoso Moisés de Miguel Ángel.</p>
-</div>
-
-<div class="card">
-<h3>🏘️ 17:30 · Trastevere</h3>
-<p>Pasear por sus calles y visitar Santa Maria in Trastevere.</p>
-</div>
-
-<div class="card">
-<h3>🍷 20:00 · Cena</h3>
-<p>Cena romántica en Trastevere ❤️</p>
 </div>
 </section>
 
 
-<section id="viernes">
-<h2>🇻🇦 Viernes 5 · Vaticano</h2>
+<!-- DIA 1 -->
+<section id="dia1">
+<div class="container">
 
-<div class="card">
-<h3>08:30 · Museos Vaticanos</h3>
-<p>Museos Vaticanos + Capilla Sixtina.</p>
-<a class="button" href="https://tickets.museivaticani.va/" target="_blank">
-Entradas oficiales
+<h2 class="section-title">Día 1 · Miércoles 3 ❤️</h2>
+<p class="section-subtitle">
+Llegada · Centro histórico · Trevi · Panteón · Piazza Navona
+</p>
+
+<div class="day">
+
+<div class="day-header">
+<div class="day-number">1</div>
+<div>
+<h3>Benvenuti a Roma 🇮🇹</h3>
+<p>Primer paseo juntos por el corazón de Roma.</p>
+</div>
+</div>
+
+<div class="timeline">
+
+<div class="stop">
+<div class="time">11:05 · ✈️ ATERRIZAJE</div>
+<h4>Aeropuerto Fiumicino</h4>
+<p>Recogemos maletas y nos ponemos rumbo al hotel.</p>
+
+<div class="route-card">
+<strong>🚆 Opción recomendada: Leonardo Express + Metro B</strong>
+<p>
+Leonardo Express → Roma Termini → Metro B dirección Laurentina →
+Piramide → 10–12 min andando hasta Bob W.
+</p>
+<div class="route">
+<span class="badge">⏱️ 45–55 min aprox.</span>
+<span class="badge">🚆 Leonardo Express</span>
+<span class="badge">🚇 Metro B</span>
+<span class="badge">🚶 10–12 min</span>
+</div>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Fiumicino+Airport&destination=Bob+W+Rome+Testaccio"
+target="_blank">
+📍 Ver ruta completa
 </a>
 </div>
 
-<div class="card">
-<h3>🍝 12:30 · Comida</h3>
-<p>Comer cerca del Vaticano.</p>
+<div class="route-card">
+<strong>🚕 Opción cómoda: taxi oficial</strong>
+<p>
+Taxi oficial blanco desde Fiumicino directamente al hotel.
+</p>
+<div class="route">
+<span class="badge">🚕 aprox. 45 min*</span>
+<span class="badge">💶 tarifa fija orientativa</span>
+</div>
+</div>
 </div>
 
-<div class="card">
-<h3>⛪ 14:30 · Basílica de San Pedro</h3>
-<p>Visita a una de las iglesias más impresionantes del mundo.</p>
+
+<div class="stop">
+<div class="time">13:00 · 🏨 HOTEL</div>
+<h4>Bob W Rome Testaccio</h4>
+<p>
+Dejamos las maletas, hacemos check-in cuando esté disponible
+y empezamos oficialmente nuestra aventura.
+</p>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Bob+W+Rome+Testaccio&destination=Piazza+Venezia+Rome"
+target="_blank">
+📍 Hotel → Piazza Venezia
+</a>
 </div>
 
-<div class="card">
-<h3>🌉 16:00 · Castel Sant'Angelo</h3>
-<p>Paseo por el puente de Sant'Angelo.</p>
+
+<div class="stop">
+<div class="time">14:00 · 🍝 COMIDA</div>
+<h4>Comida + primer paseo</h4>
+<p>Algo rico y sin prisas después del viaje.</p>
 </div>
 
-<div class="card">
-<h3>🇮🇹 17:00 · Plaza de España</h3>
-<p>Piazza del Popolo → Via del Babuino → Plaza de España.</p>
+
+<div class="stop">
+<div class="time">15:30 · 🏛️ PIAZZA VENEZIA</div>
+<h4>Monumento a Vittorio Emanuele II</h4>
+<p>Empezamos el recorrido por el centro histórico.</p>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Piazza+Venezia+Rome&destination=Trevi+Fountain+Rome"
+target="_blank">
+📍 Piazza Venezia → Trevi
+</a>
 </div>
 
-<div class="card">
-<h3>💦 19:00 · Fontana di Trevi</h3>
-<p>Volvemos a Trevi para verla iluminada.</p>
+
+<div class="stop">
+<div class="time">16:15 · 💦 FONTANA DI TREVI</div>
+<h4>Trevi</h4>
+<p>
+Primer momento romántico del viaje. ❤️
+Moneda al agua y foto juntos.
+</p>
+
+<div class="transport">
+🚶 <strong>A pie:</strong> aproximadamente 10–15 min desde el Panteón
+cuando continuemos el recorrido.
+</div>
+</div>
+
+
+<div class="stop">
+<div class="time">17:00 · 🏛️ PANTEÓN</div>
+<h4>Panteón</h4>
+<p>Uno de los lugares más impresionantes del centro histórico.</p>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Trevi+Fountain+Rome&destination=Pantheon+Rome"
+target="_blank">
+📍 Trevi → Panteón
+</a>
+</div>
+
+
+<div class="stop">
+<div class="time">18:00 · ⛲ PIAZZA NAVONA</div>
+<h4>Piazza Navona</h4>
+<p>
+Paseo tranquilo, fuentes, fotos y disfrutar del ambiente.
+</p>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Pantheon+Rome&destination=Piazza+Navona+Rome"
+target="_blank">
+📍 Panteón → Piazza Navona
+</a>
+</div>
+
+
+<div class="stop">
+<div class="time">20:00 · 🍷 CENA</div>
+<h4>Cena romántica</h4>
+<p>
+Volvemos tranquilamente hacia Testaccio o cenamos en el centro
+y regresamos después al hotel.
+</p>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Piazza+Navona+Rome&destination=Bob+W+Rome+Testaccio"
+target="_blank">
+📍 Piazza Navona → Hotel
+</a>
+</div>
+
+</div>
+</div>
 </div>
 </section>
 
 
-<section id="sabado">
-<h2>✈️ Sábado 6 · Último día</h2>
+<!-- DIA 2 -->
+<section id="dia2">
+<div class="container">
 
-<div class="card">
-<h3>🌳 09:30 · Villa Borghese</h3>
-<p>Paseo por los jardines y bajada hacia Piazza del Popolo.</p>
+<h2 class="section-title">Día 2 · Jueves 4 🏛️</h2>
+<p class="section-subtitle">
+Coliseo · Foro Romano · Palatino · Monti · Trastevere
+</p>
+
+<div class="day">
+
+<div class="day-header">
+<div class="day-number">2</div>
+<div>
+<h3>La Roma Antigua</h3>
+<p>El gran día del Coliseo.</p>
+</div>
 </div>
 
-<div class="card">
-<h3>🛍️ 11:00 · Últimas compras</h3>
-<p>Via del Corso y souvenirs.</p>
+<div class="timeline">
+
+<div class="stop">
+<div class="time">08:00 · ☕ DESAYUNO</div>
+<h4>Desayuno en Bob W</h4>
+<p>Desayunamos tranquilos antes de salir.</p>
 </div>
 
-<div class="card">
-<h3>🍝 13:30 · Comida</h3>
-<p>Última comida italiana antes de volver.</p>
+
+<div class="stop">
+<div class="time">08:30 · 🚇 HOTEL → COLISEO</div>
+<h4>Metro B</h4>
+
+<div class="route-card">
+<strong>🚇 Ruta sencilla</strong>
+<p>
+Piramide → Metro B dirección Rebibbia/Jonio →
+parada <strong>Colosseo</strong>.
+</p>
+
+<div class="route">
+<span class="badge">🚇 Línea B</span>
+<span class="badge">📍 Colosseo</span>
+<span class="badge">⏱️ 10–15 min aprox.</span>
 </div>
 
-<div class="card">
-<h3>🧳 15:00 · Maletas</h3>
-<p>Volver al alojamiento y recoger el equipaje.</p>
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Bob+W+Rome+Testaccio&destination=Colosseum+Rome&travelmode=transit"
+target="_blank">
+📍 Ver ruta
+</a>
+</div>
 </div>
 
-<div class="card">
-<h3>✈️ 18:00 · Aeropuerto</h3>
-<p>Salida hacia Fiumicino para el vuelo de las 22:00.</p>
+
+<div class="stop">
+<div class="time">09:00 · 🏛️ COLISEO</div>
+<h4>Coliseo + Foro Romano + Palatino</h4>
+<p>
+Reservamos una entrada con horario temprano y hacemos todo el conjunto.
+</p>
+
+<a class="map-button"
+href="https://ticketing.colosseo.it/"
+target="_blank">
+🎟️ Entradas oficiales
+</a>
+</div>
+
+
+<div class="stop">
+<div class="time">13:00 · 🍝 MONTI</div>
+<h4>Comida en Monti</h4>
+<p>
+Desde el Coliseo vamos andando hacia el barrio de Monti.
+</p>
+
+<div class="transport">
+🚶 <strong>Coliseo → Monti:</strong> aproximadamente 10–15 min andando.
+</div>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Colosseum+Rome&destination=Monti+Rome"
+target="_blank">
+📍 Coliseo → Monti
+</a>
+</div>
+
+
+<div class="stop">
+<div class="time">15:00 · ⛪ SAN PIETRO IN VINCOLI</div>
+<h4>Moisés de Miguel Ángel</h4>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Monti+Rome&destination=San+Pietro+in+Vincoli+Rome"
+target="_blank">
+📍 Monti → San Pietro in Vincoli
+</a>
+</div>
+
+
+<div class="stop">
+<div class="time">16:00 · ☕ MONTI</div>
+<h4>Paseo por Monti</h4>
+<p>Cafés, tiendas pequeñas y calles con mucho encanto.</p>
+</div>
+
+
+<div class="stop">
+<div class="time">17:30 · 🚇 MONTI → TRASTEVERE</div>
+<h4>Nos vamos a Trastevere</h4>
+
+<div class="route-card">
+<strong>🚇 Transporte público</strong>
+<p>
+Utilizamos Google Maps para comprobar en ese momento
+la combinación más rápida de Metro/bus.
+</p>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Monti+Rome&destination=Trastevere+Rome&travelmode=transit"
+target="_blank">
+📍 Monti → Trastevere
+</a>
+</div>
+</div>
+
+
+<div class="stop">
+<div class="time">18:15 · ❤️ TRASTEVERE</div>
+<h4>Paseo por Trastevere</h4>
+<p>
+Uno de los momentos más bonitos para pasear juntos.
+</p>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Trastevere+Rome&destination=Santa+Maria+in+Trastevere"
+target="_blank">
+📍 Ruta por Trastevere
+</a>
+</div>
+
+
+<div class="stop">
+<div class="time">20:00 · 🍷 CENA</div>
+<h4>Cena en Trastevere</h4>
+<p>Pasta, vino y paseo nocturno. ❤️</p>
+</div>
+
+
+<div class="stop">
+<div class="time">22:00 · 🏨 REGRESO</div>
+<h4>Trastevere → Bob W</h4>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Trastevere+Rome&destination=Bob+W+Rome+Testaccio&travelmode=transit"
+target="_blank">
+📍 Ver ruta de vuelta
+</a>
+</div>
+
+</div>
+</div>
 </div>
 </section>
 
 
+<!-- DIA 3 -->
+<section id="dia3">
+<div class="container">
+
+<h2 class="section-title">Día 3 · Viernes 5 🇻🇦</h2>
+<p class="section-subtitle">
+Vaticano · San Pedro · Castel Sant'Angelo · Piazza del Popolo · España · Trevi
+</p>
+
+<div class="day">
+
+<div class="day-header">
+<div class="day-number">3</div>
+<div>
+<h3>El Vaticano y Roma elegante</h3>
+<p>Un día completo para descubrir el lado monumental de Roma.</p>
+</div>
+</div>
+
+<div class="timeline">
+
+<div class="stop">
+<div class="time">07:00 · ☕ DESAYUNO</div>
+<h4>Desayuno</h4>
+<p>Desayunamos pronto para llegar con tiempo al Vaticano.</p>
+</div>
+
+
+<div class="stop">
+<div class="time">07:45 · 🚇 TESTACCIO → VATICANO</div>
+<h4>Metro B + Metro A</h4>
+
+<div class="route-card">
+<strong>🚇 Piramide → Termini → Ottaviano</strong>
+<p>
+Desde Piramide tomamos la línea B hasta Termini.
+En Termini cambiamos a la línea A dirección Battistini
+y bajamos en <strong>Ottaviano</strong>.
+Después caminamos hacia los Museos Vaticanos.
+</p>
+
+<div class="route">
+<span class="badge">🚇 Línea B</span>
+<span class="badge">🔄 Termini</span>
+<span class="badge">🚇 Línea A</span>
+<span class="badge">📍 Ottaviano</span>
+</div>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Bob+W+Rome+Testaccio&destination=Vatican+Museums&travelmode=transit"
+target="_blank">
+📍 Ver ruta
+</a>
+</div>
+</div>
+
+
+<div class="stop">
+<div class="time">08:30 · 🇻🇦 MUSEOS VATICANOS</div>
+<h4>Museos Vaticanos + Capilla Sixtina</h4>
+
+<p>
+Reservamos entrada anticipada.
+</p>
+
+<a class="map-button"
+href="https://tickets.museivaticani.va/"
+target="_blank">
+🎟️ Entradas oficiales
+</a>
+</div>
+
+
+<div class="stop">
+<div class="time">12:00 · ⛪ SAN PEDRO</div>
+<h4>Basílica de San Pedro</h4>
+
+<p>
+Desde los Museos Vaticanos nos dirigimos hacia la zona de San Pedro.
+</p>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Vatican+Museums&destination=St+Peter's+Basilica+Rome"
+target="_blank">
+📍 Museos → San Pedro
+</a>
+</div>
+
+
+<div class="stop">
+<div class="time">14:00 · 🍝 COMIDA</div>
+<h4>Comida cerca del Vaticano</h4>
+<p>Paramos a comer antes de continuar.</p>
+</div>
+
+
+<div class="stop">
+<div class="time">15:15 · 🏰 CASTEL SANT'ANGELO</div>
+<h4>Castel Sant'Angelo</h4>
+
+<div class="transport">
+🚶 <strong>San Pedro → Castel Sant'Angelo:</strong>
+unos 10–15 min andando.
+</div>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=St+Peter's+Basilica+Rome&destination=Castel+Sant'Angelo+Rome"
+target="_blank">
+📍 San Pedro → Castel
+</a>
+</div>
+
+
+<div class="stop">
+<div class="time">16:30 · 🌳 PIAZZA DEL POPOLO</div>
+<h4>Piazza del Popolo</h4>
+
+<p>
+Nos desplazamos hacia el centro para continuar el paseo.
+</p>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Castel+Sant'Angelo+Rome&destination=Piazza+del+Popolo+Rome"
+target="_blank">
+📍 Castel → Piazza del Popolo
+</a>
+</div>
+
+
+<div class="stop">
+<div class="time">17:15 · 🛍️ VIA DEL BABUINO</div>
+<h4>Paseo hacia Plaza España</h4>
+
+<div class="transport">
+🚶 <strong>Todo andando.</strong>
+Es uno de los paseos bonitos del día.
+</div>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Piazza+del+Popolo+Rome&destination=Spanish+Steps+Rome"
+target="_blank">
+📍 Popolo → Plaza España
+</a>
+</div>
+
+
+<div class="stop">
+<div class="time">18:00 · 🇮🇹 PLAZA ESPAÑA</div>
+<h4>Scalinata di Spagna</h4>
+</div>
+
+
+<div class="stop">
+<div class="time">18:30 · ❤️ TREVI DE NOCHE</div>
+<h4>Fontana di Trevi</h4>
+
+<div class="transport">
+🚶 <strong>Plaza España → Trevi:</strong>
+unos 10 min andando.
+</div>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Spanish+Steps+Rome&destination=Trevi+Fountain+Rome"
+target="_blank">
+📍 Plaza España → Trevi
+</a>
+</div>
+
+
+<div class="stop">
+<div class="time">20:00 · 🍷 CENA</div>
+<h4>Cena y última vuelta por el centro</h4>
+<p>Una noche especial para disfrutar de Roma juntos. ❤️</p>
+</div>
+
+
+<div class="stop">
+<div class="time">22:00 · 🏨 VUELTA AL HOTEL</div>
+<h4>Centro → Testaccio</h4>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Trevi+Fountain+Rome&destination=Bob+W+Rome+Testaccio&travelmode=transit"
+target="_blank">
+📍 Ver ruta de vuelta
+</a>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- DIA 4 -->
+<section id="dia4">
+<div class="container">
+
+<h2 class="section-title">Día 4 · Sábado 6 ✈️</h2>
+<p class="section-subtitle">
+Villa Borghese · últimas compras · comida · maletas · Fiumicino
+</p>
+
+<div class="day">
+
+<div class="day-header">
+<div class="day-number">4</div>
+<div>
+<h3>Último día ❤️</h3>
+<p>Como nuestro vuelo sale a las 23:15, aprovechamos Roma hasta el final.</p>
+</div>
+</div>
+
+<div class="timeline">
+
+<div class="stop">
+<div class="time">08:00 · ☕ DESAYUNO</div>
+<h4>Último desayuno en Bob W</h4>
+</div>
+
+
+<div class="stop">
+<div class="time">09:00 · 🌳 VILLA BORGHESE</div>
+<h4>Villa Borghese</h4>
+
+<div class="route-card">
+<strong>🚇 Transporte</strong>
+<p>
+Desde Piramide utilizamos Metro B hasta Termini
+y continuamos hacia la zona de Villa Borghese.
+</p>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Bob+W+Rome+Testaccio&destination=Villa+Borghese+Rome&travelmode=transit"
+target="_blank">
+📍 Hotel → Villa Borghese
+</a>
+</div>
+</div>
+
+
+<div class="stop">
+<div class="time">10:00 · 🌳 PASEO</div>
+<h4>Villa Borghese</h4>
+<p>
+Paseo tranquilo por el parque y fotos.
+</p>
+</div>
+
+
+<div class="stop">
+<div class="time">11:30 · 🛍️ CENTRO</div>
+<h4>Plaza España + compras</h4>
+
+<div class="transport">
+🚶 Desde la zona de Villa Borghese podemos bajar andando
+hacia Plaza España.
+</div>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Villa+Borghese+Rome&destination=Spanish+Steps+Rome"
+target="_blank">
+📍 Villa Borghese → Plaza España
+</a>
+</div>
+
+
+<div class="stop">
+<div class="time">13:00 · 🍝 COMIDA</div>
+<h4>Última comida italiana</h4>
+<p>
+Disfrutamos de la última pasta/pizza antes de volver.
+</p>
+</div>
+
+
+<div class="stop">
+<div class="time">15:00 · 🏛️ ÚLTIMO PASEO</div>
+<h4>Piazza Venezia / centro</h4>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Spanish+Steps+Rome&destination=Piazza+Venezia+Rome"
+target="_blank">
+📍 Plaza España → Piazza Venezia
+</a>
+</div>
+
+
+<div class="stop">
+<div class="time">16:30 · 🧳 HOTEL</div>
+<h4>Recoger maletas</h4>
+
+<p>
+Volvemos a Bob W, recogemos las maletas y hacemos una última pausa.
+</p>
+
+<div class="highlight">
+<strong>💡 MUY IMPORTANTE</strong><br>
+Bob W indica que dispone de almacenamiento de equipaje
+hasta las <strong>23:00 del día del check-out</strong>.
+Así podemos dejar las maletas por la mañana y recuperarlas
+antes de ir al aeropuerto.
+</div>
+</div>
+
+
+<div class="stop">
+<div class="time">19:00 · 🚆 RUMBO A FIUMICINO</div>
+<h4>Bob W → Aeropuerto Fiumicino</h4>
+
+<div class="route-card">
+<strong>🚆 Opción económica</strong>
+
+<p>
+Hotel → Piramide → Metro B → Termini →
+Leonardo Express → Fiumicino.
+</p>
+
+<div class="route">
+<span class="badge">🚶 10–12 min</span>
+<span class="badge">🚇 Metro B</span>
+<span class="badge">🚆 Leonardo Express</span>
+<span class="badge">✈️ FCO</span>
+</div>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Bob+W+Rome+Testaccio&destination=Fiumicino+Airport&travelmode=transit"
+target="_blank">
+📍 Ver ruta al aeropuerto
+</a>
+</div>
+
+<div class="route-card">
+<strong>🚕 Opción cómoda</strong>
+<p>
+Taxi oficial desde el hotel al aeropuerto.
+</p>
+
+<a class="map-button"
+href="https://www.google.com/maps/dir/?api=1&origin=Bob+W+Rome+Testaccio&destination=Fiumicino+Airport&travelmode=driving"
+target="_blank">
+📍 Ver ruta en coche
+</a>
+</div>
+</div>
+
+
+<div class="stop">
+<div class="time">20:15–20:30 · ✈️ AEROPUERTO</div>
+<h4>Fiumicino</h4>
+<p>
+Objetivo: estar en el aeropuerto unas 2 h 45 min antes del vuelo.
+</p>
+</div>
+
+
+<div class="stop">
+<div class="time">23:15 · ❤️ VUELO DE VUELTA</div>
+<h4>Roma → Barcelona</h4>
+<p>
+Vueling · salida 23:15 · llegada 01:05.
+</p>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- TRANSPORTE -->
+<section id="transporte">
+<div class="container">
+
+<h2 class="section-title">🚇 Cómo movernos por Roma</h2>
+<p class="section-subtitle">
+Nuestro pequeño manual para no perdernos
+</p>
+
+<div class="intro-grid">
+
+<div class="info-card">
+<div class="icon">🚇</div>
+<h3>Metro</h3>
+<p>
+Será nuestro principal aliado para los trayectos largos.
+</p>
+<p>
+<strong>Estación clave:</strong> Piramide, cerca del hotel.
+</p>
+</div>
+
+<div class="info-card">
+<div class="icon">🚶</div>
+<h3>A pie</h3>
+<p>
+En el centro caminaremos muchísimo.
+Trevi, Panteón, Piazza Navona, España,
+Popolo y muchas zonas están mejor disfrutadas andando.
+</p>
+</div>
+
+<div class="info-card">
+<div class="icon">🚌</div>
+<h3>Bus</h3>
+<p>
+Lo utilizaremos cuando Google Maps nos indique que es
+más cómodo que caminar o hacer varios cambios de Metro.
+</p>
+</div>
+
+<div class="info-card">
+<div class="icon">🚕</div>
+<h3>Taxi</h3>
+<p>
+Ideal para aeropuerto o si estamos cansados después de una noche larga.
+</p>
+</div>
+
+</div>
+
+<div class="highlight">
+
+<h3>🎟️ ¿Qué billete nos interesa?</h3>
+
+<p style="margin-top:10px">
+Actualmente ATAC ofrece:
+</p>
+
+<ul style="margin:15px 0 15px 25px">
+<li>BIT 100 min: <strong>1,50 €</strong></li>
+<li>Roma 24h: <strong>8,50 €</strong></li>
+<li>Roma 48h: <strong>15 €</strong></li>
+<li>Roma 72h: <strong>22 €</strong></li>
+</ul>
+
+<p>
+<strong>Para nosotros:</strong> no compraría automáticamente el abono.
+Como vamos a hacer muchos recorridos andando, probablemente
+nos convenga comprar billetes individuales según los trayectos.
+Lo decidimos allí según cuánto usemos el Metro.
+</p>
+
+<p style="margin-top:10px;font-size:13px">
+⚠️ Precios consultados actualmente y sujetos a cambios antes de febrero de 2027.
+</p>
+
+<a class="button"
+href="https://www.atac.roma.it/en/tickets-and-passes"
+target="_blank">
+🚇 Ver tarifas oficiales ATAC
+</a>
+
+</div>
+
+<div class="warning">
+<strong>📱 Truco para Roma:</strong>
+antes de salir de cada sitio pulsamos el botón
+<strong>“Ver ruta”</strong> de nuestra web.
+Google Maps nos indicará en ese momento si conviene
+caminar, coger Metro o autobús y nos dará los horarios actualizados.
+</div>
+
+</div>
+</section>
+
+
+<!-- RESERVAS -->
 <section id="reservas">
-<h2>🎟️ Reservas</h2>
+<div class="container">
 
-<div class="card">
-<h3>🏟️ Coliseo</h3>
-<p>Intentar reservar jueves 4 sobre las 09:00.</p>
-<a class="button" href="https://ticketing.colosseo.it/" target="_blank">
-Reservar Coliseo
+<h2 class="section-title">🎟️ Reservas importantes</h2>
+<p class="section-subtitle">
+Estas son las que tenemos que vigilar antes del viaje
+</p>
+
+<div class="reservations">
+
+<div class="reserve-card">
+<h3>🏛️ Coliseo</h3>
+<p>
+Entrada combinada Coliseo + Foro Romano + Palatino.
+</p>
+<p style="margin-top:10px">
+💡 Intentaremos reservar horario de mañana.
+</p>
+
+<a class="button"
+href="https://ticketing.colosseo.it/"
+target="_blank">
+🎟️ Web oficial
 </a>
 </div>
 
-<div class="card">
+
+<div class="reserve-card">
 <h3>🇻🇦 Vaticano</h3>
-<p>Intentar reservar viernes 5 sobre las 08:00–08:30.</p>
-<a class="button" href="https://tickets.museivaticani.va/" target="_blank">
-Reservar Vaticano
+<p>
+Museos Vaticanos + Capilla Sixtina.
+</p>
+<p style="margin-top:10px">
+💡 Mejor reservar primera hora.
+</p>
+
+<a class="button"
+href="https://tickets.museivaticani.va/"
+target="_blank">
+🎟️ Web oficial
 </a>
 </div>
-</section>
 
 
-<section id="presupuesto">
-<h2>💶 Presupuesto</h2>
+<div class="reserve-card">
+<h3>🌳 Villa Borghese</h3>
+<p>
+Si decidimos visitar la Galería Borghese,
+la reserva es obligatoria.
+</p>
 
-<div class="card">
-<p>🏟️ Coliseo + Foro + Palatino: 30–40 €</p>
-<p>🇻🇦 Vaticano: 40–60 €</p>
-<p>🏛️ Panteón: unos 14 €</p>
-<p>🚇 Transporte: 25–45 €</p>
-<p>🍝 Comidas: 150–200 €</p>
-<p>☕ Cafés / helados: 30–40 €</p>
+<a class="button"
+href="https://galleriaborghese.beniculturali.it/"
+target="_blank">
+🎟️ Información
+</a>
+</div>
 
-<hr>
+</div>
 
-<h3>Total aproximado para los dos:</h3>
-<h2>290–400 €</h2>
+<div class="warning">
+⚠️ Las fechas son febrero de 2027. Conviene revisar las ventanas
+de apertura de reservas cuando se acerque el viaje, porque algunas
+atracciones abren sus ventas con antelación limitada.
+</div>
 
-<p><small>Sin contar vuelos ni alojamiento.</small></p>
 </div>
 </section>
 
 
+<!-- CHECKLIST -->
+<section id="checklist">
+<div class="container">
+
+<h2 class="section-title">☑️ Nuestra checklist</h2>
+<p class="section-subtitle">
+Marcamos lo que vayamos teniendo preparado
+</p>
+
+<div class="checklist">
+
+<label class="check">
+<input type="checkbox" data-check="vuelos">
+✈️ Vuelos Vueling
+</label>
+
+<label class="check">
+<input type="checkbox" data-check="hotel">
+🏨 Hotel reservado
+</label>
+
+<label class="check">
+<input type="checkbox" data-check="coliseo">
+🏛️ Entradas Coliseo
+</label>
+
+<label class="check">
+<input type="checkbox" data-check="vaticano">
+🇻🇦 Entradas Vaticano
+</label>
+
+<label class="check">
+<input type="checkbox" data-check="maletas">
+🧳 Preparar maletas
+</label>
+
+<label class="check">
+<input type="checkbox" data-check="documentos">
+🪪 DNI / documentación
+</label>
+
+<label class="check">
+<input type="checkbox" data-check="seguro">
+🛡️ Seguro de viaje
+</label>
+
+<label class="check">
+<input type="checkbox" data-check="tarjetas">
+💳 Revisar tarjetas
+</label>
+
+<label class="check">
+<input type="checkbox" data-check="movil">
+📱 Datos móviles
+</label>
+
+<label class="check">
+<input type="checkbox" data-check="maps">
+📍 Google Maps preparado
+</label>
+
+<label class="check">
+<input type="checkbox" data-check="restaurantes">
+🍝 Elegir restaurantes
+</label>
+
+<label class="check">
+<input type="checkbox" data-check="romantico">
+❤️ Preparar sorpresa
+</label>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- ROMANTIC -->
 <section>
-<h2>❤️ Checklist</h2>
+<div class="container">
 
-<div class="card">
-<p>☐ Vuelos confirmados</p>
-<p>☐ Hotel confirmado</p>
-<p>☐ Coliseo reservado</p>
-<p>☐ Vaticano reservado</p>
-<p>☐ Transporte aeropuerto reservado/comprobado</p>
-<p>☐ Documentación preparada</p>
-<p>☐ Maleta preparada</p>
-<p>☐ Cena romántica ❤️</p>
+<div class="romantic">
+
+<h2>Nuestro viaje a Roma ❤️</h2>
+
+<p style="font-size:20px;max-width:700px;margin:auto">
+Cuatro días para perdernos por calles que todavía no conocemos,
+comer pasta, brindar con vino, lanzar una moneda a Trevi
+y guardar recuerdos que sean solo nuestros.
+</p>
+
+<p style="font-size:30px;margin-top:25px">
+🇮🇹 ❤️ 🥂 🍝
+</p>
+
+</div>
+
 </div>
 </section>
 
-</main>
 
-<footer>
-Roma · 3–6 febrero 2027 ❤️
-<br>
-Un viaje para recordar.
+<!-- FOOTER -->
+<footer class="footer">
+
+<p>Roma · 3–6 febrero 2027 🇮🇹</p>
+<p style="margin-top:8px">
+Hecho con mucho cariño para nuestra escapada ❤️
+</p>
+
 </footer>
+
+
+<script>
+
+/* CHECKLIST QUE SE GUARDA AUTOMÁTICAMENTE */
+
+const checks = document.querySelectorAll('[data-check]');
+
+checks.forEach(check => {
+
+  const key = 'roma2027_' + check.dataset.check;
+
+  check.checked = localStorage.getItem(key) === 'true';
+
+  check.addEventListener('change', () => {
+    localStorage.setItem(key, check.checked);
+  });
+
+});
+
+
+/* CUENTA ATRÁS */
+
+const tripDate = new Date('2027-02-03T10:05:00+01:00');
+
+function countdown(){
+
+  const now = new Date();
+  const diff = tripDate - now;
+
+  if(diff <= 0) return;
+
+  const days = Math.floor(diff / (1000*60*60*24));
+
+  console.log('Faltan ' + days + ' días para Roma ❤️');
+
+}
+
+countdown();
+
+</script>
 
 </body>
 </html>
